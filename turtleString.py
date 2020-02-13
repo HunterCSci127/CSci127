@@ -21,8 +21,6 @@ for ch in commands:
         tess.penup()
     elif ch == 'v':          #lower pen
         tess.pendown()
-    elif ch == 'B':          #go backwards
-        tess.backward(50)
     elif ch == 'r':          #turn red
         tess.color("red")
     elif ch == 'g':          #turn green
