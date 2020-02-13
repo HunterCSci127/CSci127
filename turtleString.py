@@ -23,11 +23,13 @@ for ch in commands:
         tess.pendown()
     elif ch == 'B':          #go backwards
         tess.backward(50)
+    elif ch == 'r':          #turn red
+        tess.color("red")
     elif ch == 'g':          #turn green
         tess.color("green")
     elif ch == 'b':          #turn blue
         tess.color("blue")
-    else:                   #for any other character, print an error message
+    else:                    #for any other character, print an error message
         print("Error: do not know the command:", c)
 
 print("See graphics window for your image")
