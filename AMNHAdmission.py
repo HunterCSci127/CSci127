@@ -2,7 +2,7 @@
 #A template for a program that computes American Museum of Natural History admission fees.
 #Modified by:  ADD YOUR NAME AND EMAIL HERE
 
-def computeFare(ageGroup, ticketType):
+def computePrice(ageGroup, ticketType):
      """
      Takes as two parameters: the age group and the ticket type.
      Returns the AMNH admission price, as follows:
@@ -29,7 +29,7 @@ def computeFare(ageGroup, ticketType):
 def main():
      a = input('Enter the age group (child, adult, senior): ')
      t = input('Enter the ticket type (admission / +exhibitions): ').lower()
-     price = computeFare(a,t)
+     price = computePrice(a,t)
      print('The price of your ticket is', price)
 
 #Allow script to be run directly:
