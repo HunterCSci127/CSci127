@@ -27,6 +27,8 @@ for ch in commands:
         tess.color("green")
     elif ch == 'b':          #turn blue
         tess.color("blue")
+    elif ch == 'D':          #draws a dot
+        tess.dot(12)    
     else:                    #for any other character, print an error message
         print("Error: do not know the command:", ch)
 
