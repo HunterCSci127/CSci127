@@ -36,7 +36,7 @@ def nestedTriangle(t, length):
     Takes two parameters: a turtle and a length.
     The function does the following: if the length is greater than 10,
     it repeats 3 times:  moves forward that length, turns 120 degrees, 
-    and calls triangle(t, length/2).
+    and calls nestedTriangle(t, length/2).
     """
 
      ###################################
