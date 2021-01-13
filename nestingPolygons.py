@@ -1,8 +1,8 @@
 #CSci 127 Teaching Staff
 #January 2021
 #A template for a program that draws nested polygons
-#Modified by:  --- Your Name Here! ___
-#Email: --- Your Email Here! ___
+#Modified by:  --- Your Name Here! ---
+#Email: --- Your Email Here! ---
 
 import turtle
 def setUp(t, dist, col):
