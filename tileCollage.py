@@ -1,0 +1,131 @@
+#CSci 127 Teaching Staff
+#January 2021
+#A program that creates a tile collage from input image
+#Modified by:  ADD YOUR NAME HERE , ADD YOUR EMAIL HERE
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+def mirror(img, axis):
+    '''
+    Creates and returns a mirrored copy of img along axis
+    Expected values for axis are 'x', 'y', 'xy' (mirrored along both x and y axes)
+    If the value of axis is not one of the expected, it prints: Invalix axis
+    '''
+
+    ###################################
+    ### FILL IN YOUR CODE HERE      ###
+    ### Other than your name above, ###
+    ### this is the only section    ###
+    ### you change in this program. ###
+    ###################################
+
+    if axis == 'x':
+        mirrored = img[::-1,:,:]
+        return mirrored
+    elif axis == 'y':
+        mirrored = img[:,::-1,:]
+        return mirrored
+    elif axis == 'xy':
+        mirrored = img[::-1,::-1,:]
+        return mirrored
+    else:
+        print("Invalix axis")
+
+
+
+
+
+def remove_hue(img, hue):
+    '''
+    Removes hue from img by turning off the corresponding color channel
+    Expected values for hue are 'red', 'green', 'blue'
+    If the value of hue is not one of the expected, it prints: No such hue.
+    '''
+    ###################################
+    ### FILL IN YOUR CODE HERE      ###
+    ### Other than your name above, ###
+    ### this is the only section    ###
+    ### you change in this program. ###
+    ###################################
+
+    if hue == "red":
+        img[:,:,0]=0
+    elif hue == "green":
+        img[:,:,1]=0
+    elif hue == "blue":
+        img[:,:,2]=0
+    else:
+        print("No such hue.")
+
+
+
+def fourfoldTile(img):
+    '''
+    Creates and returns a new image consisting of 4 copies of img
+    in a tile layout, with 2 copies at the top and 2 copies at the bottom
+    '''
+
+    ###################################
+    ### FILL IN YOUR CODE HERE      ###
+    ### Other than your name above, ###
+    ### this is the only section    ###
+    ### you change in this program. ###
+    ###################################
+
+    #create a new image with double size
+    newImg = np.zeros((img.shape[0]*2,img.shape[1]*2,img.shape[2]))
+
+    #add img to top left quarter
+    newImg[:img.shape[0],:img.shape[1]]=img
+    #add img to top right quarter
+    newImg[:img.shape[0],img.shape[1]:]=img
+    #add img to bottom left quarter
+    newImg[img.shape[0]:,:img.shape[1]]=img
+    #add img to bottom right quarter
+    newImg[img.shape[0]:,img.shape[1]:]=img
+
+    return newImg
+
+
+######################################################################
+### DO NOT CHANGE ANYTHING BELOW  AND INCLUDING THIS LINE          ###
+######################################################################
+
+
+def main():
+    '''
+    Creates a tile collage from input image
+    '''
+
+    infile = input('Enter input file name: ')
+    outFile = input('Enter output file name: ')
+    img = plt.imread(infile)
+
+    newImg = fourfoldTile(img)
+
+    #Remove blue from top-right quarter
+    remove_hue(newImg[:img.shape[0],img.shape[1]:],'blue')
+    #Remove green from bottom-left quarter
+    remove_hue(newImg[img.shape[0]:,:img.shape[1]],'green')
+    #Remove blue from bottom-right quarter
+    remove_hue(newImg[img.shape[0]:,img.shape[1]:],'red')
+
+
+    #Mirror top-right quarter along the y-axis
+    newImg[:img.shape[0],img.shape[1]:] = mirror(newImg[:img.shape[0],img.shape[1]:],"y")
+    #Mirror bottom-left quarter along the x-axis
+    newImg[img.shape[0]:,:img.shape[1]] = mirror(newImg[img.shape[0]:,:img.shape[1]],"x")
+    #Mirror bottom-right quarter along both x and y axis
+    newImg[img.shape[0]:,img.shape[1]:] = mirror(newImg[img.shape[0]:,img.shape[1]:],"xy")
+
+
+    #Save the tile collage to a file
+    plt.imsave(outFile, newImg)
+
+
+#Allow script to be run directly:
+if __name__ == '__main__':
+    main()
