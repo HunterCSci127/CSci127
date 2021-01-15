@@ -22,17 +22,7 @@ def mirror(img, axis):
     ### you change in this program. ###
     ###################################
 
-    if axis == 'x':
-        mirrored = img[::-1,:,:]
-        return mirrored
-    elif axis == 'y':
-        mirrored = img[:,::-1,:]
-        return mirrored
-    elif axis == 'xy':
-        mirrored = img[::-1,::-1,:]
-        return mirrored
-    else:
-        print("Invalix axis")
+
 
 
 
@@ -51,14 +41,8 @@ def remove_hue(img, hue):
     ### you change in this program. ###
     ###################################
 
-    if hue == "red":
-        img[:,:,0]=0
-    elif hue == "green":
-        img[:,:,1]=0
-    elif hue == "blue":
-        img[:,:,2]=0
-    else:
-        print("No such hue.")
+
+
 
 
 
@@ -75,19 +59,9 @@ def fourfoldTile(img):
     ### you change in this program. ###
     ###################################
 
-    #create a new image with double size
-    newImg = np.zeros((img.shape[0]*2,img.shape[1]*2,img.shape[2]))
 
-    #add img to top left quarter
-    newImg[:img.shape[0],:img.shape[1]]=img
-    #add img to top right quarter
-    newImg[:img.shape[0],img.shape[1]:]=img
-    #add img to bottom left quarter
-    newImg[img.shape[0]:,:img.shape[1]]=img
-    #add img to bottom right quarter
-    newImg[img.shape[0]:,img.shape[1]:]=img
 
-    return newImg
+
 
 
 ######################################################################
