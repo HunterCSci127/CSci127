@@ -28,6 +28,7 @@ def mirror(img, axis):
 
 
 
+
 def remove_hue(img, hue):
     '''
     Removes hue from img by turning off the corresponding color channel
