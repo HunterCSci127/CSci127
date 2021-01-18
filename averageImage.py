@@ -11,7 +11,7 @@ def average(region):
      Takes a region of an image and
      Returns the average red, green, and blue values across the region.
      """
-     
+
      red, green, blue = 0,0,0  #<-- placeholder, can remove once defined.
 
      ###################################
@@ -30,7 +30,7 @@ def setRegion(region, r,g,b):
      Sets the region so that all points have
      red values of r, green values of g, and blue values of b.
      """
-     
+
      ###################################
      ### FILL IN YOUR CODE HERE      ###
      ### Other than your name above, ###
@@ -43,7 +43,7 @@ def setRegion(region, r,g,b):
 
 
 ######################################################################
-### DO NOT CHANGE ANYTHING BELOW THIS LINE                         ###
+### DO NOT CHANGE ANYTHING BELOW AND INCLUDING THIS LINE           ###
 ######################################################################
 
 
@@ -60,7 +60,7 @@ def quarter(img2, levels):
      hReg = h//2**levels
      wReg = w//2**levels
      for i in range(2**levels):
-          for j in range(2**levels):              
+          for j in range(2**levels):
                #Average the region:
                r,g,b = average(img2[i*hReg:(i+1)*hReg,j*wReg:(j+1)*wReg])
                setRegion(img2[i*hReg:(i+1)*hReg,j*wReg:(j+1)*wReg],r,g,b)
@@ -74,7 +74,7 @@ def main():
      for i in range(8):
           img2 = img.copy()   #Make a copy to average
           quarter(img2,i)     #Split in half i times, and average regions
-     
+
           plt.imshow(img2)    #Load our new image into pyplot
           plt.show()          #Show the image (waits until closed to continue)
 
