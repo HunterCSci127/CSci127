@@ -12,7 +12,7 @@ def mirror(img, axis):
     '''
     Creates and returns a mirrored copy of img along axis
     Expected values for axis are 'x', 'y', 'xy' (mirrored along both x and y axes)
-    If the value of axis is not one of the expected, it prints: Invalix axis
+    If the value of axis is not one of the expected, it prints: Invalid axis
     '''
 
     ###################################
