@@ -13,7 +13,7 @@ def getData():
      Asks the user for the name of the CSV and
      Returns a dataframe of the contents.
      """
-     
+
      df = None #<-- placeholder, can remove once defined.
 
      ###################################
@@ -34,9 +34,9 @@ def getColumnNames():
      ###################################
      ### FILL IN YOUR CODE HERE      ###
      ###################################
-    
+
      return(latName,lonName)
- 
+
 
 def getLocale():
      """
@@ -49,7 +49,7 @@ def getLocale():
 
      ###################################
      ### FILL IN YOUR CODE HERE      ###
-     ###################################   
+     ###################################
 
      return(lat, lon)
 
@@ -68,7 +68,7 @@ def computeDist(x1,y1,x2,y2):
 
 
 ######################################################################
-### DO NOT CHANGE ANYTHING BELOW HERE                              ###
+### DO NOT CHANGE ANYTHING BELOW AND INCLUDING THIS LINE           ###
 ######################################################################
 
 def dotAllPoints(cMap,df,latCol,lonCol):
@@ -97,7 +97,7 @@ def markAndFindClosest(cMap,df,latCol,lonCol,cLat,cLon):
      folium.Marker(location=[cLat,cLon],
                    popup="You Are Here",
                    icon=folium.Icon(color='red')).add_to(cMap)
-     
+
 
 def writeMap(cMap):
      """
@@ -120,8 +120,3 @@ def main():
 
 if __name__ == "__main__":
      main()
-
-
-
-
-
