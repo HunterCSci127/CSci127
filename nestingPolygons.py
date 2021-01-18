@@ -9,6 +9,7 @@ def setUp(t, dist, col):
     """
     Takes three parameters, a turtle, t, the distance, dist,
     to move the turtle and a color, col, to set the turtle's color.
+    DO NOT CHANGE THE CODE IN THIS FUNCTION
     """
     t.penup()
     t.forward(dist)
@@ -57,6 +58,7 @@ def main():
     l = int(input('Enter length: '))
     s = int(input('Enter number of sides: '))
 
+    #check there are enough sides to draw a polygon
     if s < 3:
         print("A polygon must have at least 3 sides.")
     else:
