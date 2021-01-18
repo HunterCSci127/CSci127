@@ -47,7 +47,7 @@ def remove_hue(img, hue):
 
 
 
-def fourfoldTile(img):
+def fourfold_tile(img):
     '''
     Creates and returns a new image consisting of 4 copies of img
     in a tile layout, with 2 copies at the top and 2 copies at the bottom
@@ -79,26 +79,26 @@ def main():
     outFile = input('Enter output file name: ')
     img = plt.imread(infile)
 
-    newImg = fourfoldTile(img)
+    new_img = fourfold_tile(img)
 
     #Remove blue from top-right quarter
-    remove_hue(newImg[:img.shape[0],img.shape[1]:],'blue')
+    remove_hue(new_img[:img.shape[0],img.shape[1]:],'blue')
     #Remove green from bottom-left quarter
-    remove_hue(newImg[img.shape[0]:,:img.shape[1]],'green')
+    remove_hue(new_img[img.shape[0]:,:img.shape[1]],'green')
     #Remove blue from bottom-right quarter
-    remove_hue(newImg[img.shape[0]:,img.shape[1]:],'red')
+    remove_hue(new_img[img.shape[0]:,img.shape[1]:],'red')
 
 
     #Mirror top-right quarter along the y-axis
-    newImg[:img.shape[0],img.shape[1]:] = mirror(newImg[:img.shape[0],img.shape[1]:],"y")
+    new_img[:img.shape[0],img.shape[1]:] = mirror(new_img[:img.shape[0],img.shape[1]:],"y")
     #Mirror bottom-left quarter along the x-axis
-    newImg[img.shape[0]:,:img.shape[1]] = mirror(newImg[img.shape[0]:,:img.shape[1]],"x")
+    new_img[img.shape[0]:,:img.shape[1]] = mirror(new_img[img.shape[0]:,:img.shape[1]],"x")
     #Mirror bottom-right quarter along both x and y axis
-    newImg[img.shape[0]:,img.shape[1]:] = mirror(newImg[img.shape[0]:,img.shape[1]:],"xy")
+    new_img[img.shape[0]:,img.shape[1]:] = mirror(new_img[img.shape[0]:,img.shape[1]:],"xy")
 
 
     #Save the tile collage to a file
-    plt.imsave(outFile, newImg)
+    plt.imsave(outFile, new_img)
 
 
 #Allow script to be run directly:
