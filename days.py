@@ -1,6 +1,6 @@
 #CSci 127 Teaching Staff
 #A program that uses functions to print out days.
-#Modified by:  ADD YOUR NAME HERE
+#Modified by:  --YOUR NAME HERE-- , --YOUR EMAIL HERE--
 
 def dayString(dayNum):
      """
@@ -9,7 +9,7 @@ def dayString(dayNum):
      Example: dayString(1) returns "Monday".
      Assumes that input is an integer ranging from 1 to 7
      """
-     
+
      dayString = ""
 
      ###################################
@@ -33,4 +33,3 @@ def main():
 #Allow script to be run directly:
 if __name__ == "__main__":
      main()
-                   
