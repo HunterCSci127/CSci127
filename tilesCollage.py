@@ -79,6 +79,7 @@ def main():
     outFile = input('Enter output file name: ')
     img = plt.imread(infile)
 
+    #new_img consits of four copies of img, two on top and two ont the bottom
     new_img = fourfold_tile(img)
 
     #Remove blue from top-right quarter
