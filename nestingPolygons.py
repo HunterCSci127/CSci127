@@ -17,12 +17,12 @@ def setUp(t, dist, col):
     t.color(col)
 
 
-def nested_polygon(t, length, sides):
+def nestedPolygon(t, length, sides):
     """
     Takes three parameters: a turtle a side length and the number of sides.
     The function does the following: if the length is greater than 10,
     it repeats sides times:  moves forward that length, turns 360/sides degrees.
-    When that is completed, it calls nested_polygon(t, length/2, sides).
+    When that is completed, it calls nestedPolygon(t, length/2, sides).
     """
 
      ###################################
@@ -36,12 +36,12 @@ def nested_polygon(t, length, sides):
 
 
 
-def fractal_polygon(t, length, sides):
+def fractalPolygon(t, length, sides):
     """
     Takes three parameters: a turtle a side length and the number of sides.
     The function does the following: if the length is greater than 10,
     it repeats sides times:  moves forward that length, turns 360/sides degrees,
-    and calls fractal_polygon(t, length/2, sides).
+    and calls fractalPolygon(t, length/2, sides).
     """
 
      ###################################
@@ -64,11 +64,11 @@ def main():
     else:
         tom = turtle.Turtle()
         setUp(tom, -100, "darkgreen")
-        nested_polygon(tom, l, s)
+        nestedPolygon(tom, l, s)
 
         tess = turtle.Turtle()
         setUp(tess, 100, "steelblue")
-        fractal_polygon(tess, l, s)
+        fractalPolygon(tess, l, s)
 
 if __name__ == "__main__":
      main()
