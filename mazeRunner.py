@@ -7,7 +7,7 @@ def isPositionAvailable(row, col, maze): ## row and col of the place the User wi
         return False
     if maze[row][col] == '1': ## Checks if User is attempting to go thru walls
         return False
-    elif maze[row][col] == '0': ## Checks if User is attempting to make legal maneuver
+    elif maze[row][col] == '0': ## Checks if User is attempting to make legal move
         return True
     else:
         return True
@@ -62,10 +62,10 @@ def printMaze(maze, currRow, currCol): ## currRow and currCol represent the User
 def playGame(maze, row, col): ## row and col given here is the starting position
     commands = input("Enter a string of commands: ")
 
-    ## Loops through the given set of commands. For each command, check if
-    ## isPositionAvailable() and return false to end the game if it is not availale,
-    ## otherwise execute the command by updating the position using
-    ## row and or col as appropriate and, if the new location contains an `X`,
+    ## Loops through the given set of commands. For each command,
+    ## update row and col accordingly to the current command and then check if
+    ## isPositionAvailable() and return false to end the game if it is not availale.
+    ## If the new location contains an `X`,
     ## return True to indicate that the User has won the game.
     for command in commands:
         ...
