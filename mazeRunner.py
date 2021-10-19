@@ -62,17 +62,33 @@ def printMaze(maze, currRow, currCol): ## currRow and currCol represent the User
 def playGame(maze, row, col): ## row and col given here is the starting position
     commands = input("Enter a string of commands: ")
 
-    ## Loops through the given set of commands. For each command,
-    ## update row and col accordingly to the current command and then check if
-    ## isPositionAvailable() and return false to end the game if it is not availale.
-    ## If the new location contains an `X`,
-    ## return True to indicate that the User has won the game.
+    ## Loops through the given set of commands
     for command in commands:
         ...
-        ##############################
         #### ENTER YOUR CODE HERE ####
-        ##############################
 
+        ## If the current command is 'R', then move to the Right by
+        ## increasing col by 1.
+        ## Utilize isPositionAvailable() to check if the User can move there.
+        ## If the position is not available, end the game by returning False.
+
+        ## If the current command is 'L', then move to the Left by
+        ## decreasing col by 1.
+        ## Utilize isPositionAvailable() to check if the User can move there.
+        ## If the position is not available, end the game by returning False.
+
+        ## If the current command is 'U', then move Up by
+        ## decreasing row by 1.
+        ## Utilize isPositionAvailable() to check if the User can move there.
+        ## If the position is not available, end the game by returning False.
+
+        ## If the current command is 'D', then move Down by
+        ## increasing row by 1.
+        ## Utilize isPositionAvailable() to check if the User can move there.
+        ## If the position is not available, end the game by returning False.
+
+        ## If the current location (maze[row][col]) contains an 'X'
+        ## return True indicating that the User has won the game
 
     ## If after all the commands have been executed, the game has not finished
     ## return false indicating that they did not reach the end
