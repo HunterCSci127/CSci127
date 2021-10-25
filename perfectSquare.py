@@ -1,10 +1,12 @@
-# Your name here:
-# Your hunter email here:
-# Date: 
+#Leonardo Matone
+#Leonardo.Matone72@myhunter.cuny.edu
+#Modified 07/12/21
 
 import math
 
 def is_square(positive_int):
+    if positive_int < 0:
+        return False
     root = math.sqrt(positive_int)
     return positive_int == int(root + 0.5) ** 2
 
@@ -16,6 +18,7 @@ def perfectSquareChecker(num):
     print("This number is a perfect square, it is the product of:", math.sqrt(num), "squared.")
 
 def main():
+
     """
     You are provided the above two functions, your job now is to take
     user input and validate it. In other words, take integer input from
