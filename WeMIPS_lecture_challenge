@@ -1,0 +1,14 @@
+addi $sp, $sp, -6
+addi $t0, $zero, 90
+addi $s2, $zero, 5
+SETUP: sb $t0, 0($sp)
+addi $sp, $sp, 1
+addi $s2, $s2, -1
+beq $s2, $zero, DONE
+j SETUP
+DONE: addi $t0, $zero, 0
+sb $t0, 0($sp)
+addi $sp, $sp, -6
+addi $v0, $zero, 4
+addi $a0, $sp, 0
+syscall
